@@ -1,0 +1,56 @@
+@import "~bootstrap/scss/bootstrap";
+@font-face {
+    font-family: Bebas_Neue;
+    src: local("Bebas_Neue_Cyrillic_Regular"), url(/assets/fonts/Bebas_Neue_Cyrillic_Regular.ttf);
+    font-weight: 400;
+}
+$primary-color: #df3626;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+@mixin icon($f-size, $color) {
+    font-size: $f-size;
+    color: $color;
+}
+* {
+    font-family: "Bebas_Neue";
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.nav-link {
+    color: black !important;
+    transition: 0.3s;
+    &:hover {
+        color: $primary-color !important;
+    }
+}
+.active {
+    color: $primary-color !important;
+}
+.navbar-icon {
+    @include icon(30px, $primary-color);
+    margin: 0 7px;
+    transition: 0.2s;
+    &:hover {
+        color: black;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .navbar-icon {
+        font-size: 40px;
+    }
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    .slider{
+        margin-top: 152px;
+    }
+}
