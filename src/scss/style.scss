@@ -30,27 +30,149 @@ $grid-breakpoints: (
         color: $primary-color !important;
     }
 }
+
 .active {
     color: $primary-color !important;
+}
+.navbar-brand {
+    max-width: 100%;
 }
 .navbar-icon {
     @include icon(30px, $primary-color);
     margin: 0 7px;
     transition: 0.2s;
+}
+.insta {
+    transition: 0.2s;
     &:hover {
-        color: black;
+        svg * {
+            fill: url(#rg);
+        }
     }
 }
+.fa-magnifying-glass:hover {
+    color: black;
+}
+.fa-vk:hover {
+    color: #2e77a4;
+}
+.fa-facebook-square:hover {
+    color: #23589b;
+}
+.slider {
+    position: relative;
+}
+.header {
+    z-index: 11;
+}
+.wedding-image {
+    max-width: 100%;
+}
+
+@mixin slider-buttons($positionX) {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    transition: 0.3s;
+    margin: 10px;
+    &:hover {
+        background-color: $primary-color;
+        transition: 0.3s;
+        color: white;
+    }
+}
+.slider-controls-container {
+    position: absolute;
+    bottom: 60px;
+    z-index: 10;
+    right: calc(50% - 60px);
+}
+.slider-button-next {
+    @include slider-buttons(300px);
+}
+.slider-button-prev {
+    @include slider-buttons(400px);
+}
+
+.text-container {
+    position: absolute;
+    z-index: 8 !important;
+    right: 10%;
+    bottom: 5%;
+    text-align: right;
+    text-shadow: 1px 1px 1px black;
+    .slider-header {
+        font-size: 2rem;
+        color: white;
+        transition: 0.2s;
+    }
+    .btn {
+        z-index: 1000;
+        color: $primary-color;
+        background-color: #fff;
+        &:hover {
+            color: white;
+            background-color: $primary-color;
+        }
+    }
+}
+
 @include media-breakpoint-down(lg) {
     .navbar-icon {
         font-size: 40px;
     }
-    .header{
+    .header {
         position: fixed;
         width: 100%;
         top: 0;
     }
-    .slider{
+    .slider {
         margin-top: 152px;
+    }
+    .nav-link {
+        text-align: center;
+    }
+    .nav-item {
+        border-top: 1px solid grey;
+    }
+}
+@include media-breakpoint-down(md) {
+    .slider-header {
+        font-size: 1.3rem !important;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .navbar-brand {
+        width: 64px;
+    }
+    .text-container {
+        position: static;
+        text-align: center;
+        .slider-header {
+            font-size: 1.2rem !important;
+            color: black;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
+    .slider{
+        margin-top: calc(152px - 64px);
+    }
+    .slider-controls-container {
+        display: flex;
+        width: 100%;
+        top: calc(50% - 25px);
+        right: 0;
+        justify-content: space-between;
+    }
+    .btn {
+        background-color: $primary-color !important;
+        color: white !important;
+        &:active {
+            background-color: white !important;
+            color: $primary-color !important;
+        }
     }
 }
