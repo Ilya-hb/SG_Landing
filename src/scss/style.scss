@@ -52,6 +52,16 @@ $grid-breakpoints: (
 }
 .fa-magnifying-glass:hover {
     color: black;
+    position: relative;
+}
+.btn-inp {
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    transition: 0.2s;
+}
+.hidden {
+    display: none;
 }
 .fa-vk:hover {
     color: #2e77a4;
@@ -132,15 +142,16 @@ $grid-breakpoints: (
     justify-content: center;
     align-items: center;
 }
+.black-line {
+    width: 80px;
+    border-top: 7px solid black;
+    margin: 7px;
+}
 .lines-container {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    .black-line {
-        width: 80px;
-        border-top: 7px solid black;
-        margin: 7px;
-    }
+
     .red-line {
         width: 50px;
         border-top: 7px solid $primary-color;
@@ -150,6 +161,10 @@ $grid-breakpoints: (
         @extend .lines-container;
         align-items: flex-start;
     }
+}
+.white-line {
+    @extend .black-line;
+    border-top: 7px solid white;
 }
 .portfolio-header {
     font-size: 2rem;
@@ -218,7 +233,26 @@ $grid-breakpoints: (
 .services {
     background-image: url(/assets/images/services/bgi_services.jpg);
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
+    &-wrapper {
+        display: grid;
+        row-gap: 100px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(1fr, 4);
+        justify-content: center;
+        align-items: center;
+    }
+    &-icon {
+        @include icon(100px, white);
+        transition: 0.2s;
+    }
+    .item {
+        transition: 0.2s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 }
 
 @include media-breakpoint-up(xxxl) {
@@ -231,7 +265,7 @@ $grid-breakpoints: (
 @include media-breakpoint-down(xl) {
     .wrapper {
         grid-template-columns: 292px 292px 292px;
-        grid-template-rows: 292px 292px 292px;
+        grid-template-rows: auto;
     }
 }
 @include media-breakpoint-down(lg) {
@@ -254,7 +288,10 @@ $grid-breakpoints: (
     }
     .wrapper {
         grid-template-columns: 291px 291px;
-        grid-template-rows: 291px 291px;
+    }
+    .services-wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
     }
 }
 @include media-breakpoint-down(md) {
@@ -263,24 +300,30 @@ $grid-breakpoints: (
     }
     .wrapper {
         grid-template-columns: 230px 230px;
-        grid-template-rows: 230px 230px;
+        grid-template-rows: auto;
     }
-    .grid-img{
+    .grid-img {
         width: 230px;
+    }
+    .services-wrapper {
+        row-gap: 50px;
+    }
+    .services-icon {
+        font-size: 50px;
+    }
+    .item p {
+        font-size: 0.7rem;
     }
 }
 @include media-breakpoint-down(sm) {
     .navbar-brand {
         width: 64px;
     }
-    .text-container {
-        position: static;
-        text-align: center;
-        .slider-header {
-            font-size: 1.2rem !important;
-            color: black;
-            text-shadow: 1px 1px 1px black;
-        }
+    .slider-header {
+        font-size: 0.7rem !important;
+    }
+    .text-container .btn{
+        font-size: 0.7rem;
     }
     .slider {
         margin-top: calc(152px - 64px);
@@ -313,21 +356,27 @@ $grid-breakpoints: (
         border-top: 4px solid $primary-color !important;
         margin: 4px !important;
     }
+    .white-line {
+        width: 40px !important;
+        border-top: 4px solid white !important;
+        margin: 4px !important;
+    }
 
     .wrapper {
         grid-template-columns: 170px 170px;
         grid-template-rows: 170px 170px;
     }
-    .grid-img{
+    .grid-img {
         width: 170px;
-
-    }    
-    .text{
+    }
+    .text {
         font-size: 0.5rem;
-        span, p{
+        span,
+        p {
             font-size: 0.7rem;
         }
-       
     }
-    
+    .item p {
+        font-size: 0.5rem;
+    }
 }
