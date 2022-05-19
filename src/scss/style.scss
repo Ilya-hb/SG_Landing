@@ -305,7 +305,9 @@ $grid-breakpoints: (
 }
 .form-btn {
     max-width: 200px;
-    margin: 40px auto;
+    margin-right: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 footer {
@@ -344,6 +346,7 @@ footer {
     .navbar-brand {
         margin: 0;
     }
+
     .navbar-icon,
     .icons {
         display: none;
@@ -374,9 +377,17 @@ footer {
         grid-template-rows: auto;
     }
 }
+@include media-breakpoint-up(md) {
+    form .row {
+        justify-content: flex-end;
+    }
+}
 @include media-breakpoint-down(md) {
     .slider-header {
         font-size: 1.3rem !important;
+    }
+    .form-btn {
+        margin: 30px auto;
     }
     .text-container .btn {
         font-size: 0.7rem;
