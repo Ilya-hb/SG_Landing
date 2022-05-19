@@ -242,7 +242,6 @@ $grid-breakpoints: (
         display: grid;
         row-gap: 100px;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: repeat(1fr, 4);
         justify-content: center;
         align-items: center;
     }
@@ -298,6 +297,21 @@ $grid-breakpoints: (
     max-width: 200px;
     margin: 40px auto;
 }
+
+footer {
+    background-image: url(/assets/images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    color: white;
+    background-position: center;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+    span {
+        font-size: 0.5rem;
+    }
+}
+
 @include media-breakpoint-up(xxxl) {
     .slider,
     .services {
@@ -350,6 +364,13 @@ $grid-breakpoints: (
     .grid-img {
         width: 230px;
     }
+    .hidden-item {
+        display: none;
+    }
+    .lst-item {
+        grid-column-start: 1;
+        grid-column-end: span 2;
+    }
     .services-wrapper {
         row-gap: 50px;
     }
@@ -384,7 +405,6 @@ $grid-breakpoints: (
             }
         }
     }
-   
 }
 @include media-breakpoint-down(sm) {
     .navbar-brand {
