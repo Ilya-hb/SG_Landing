@@ -57,6 +57,14 @@ $grid-breakpoints: (
     color: black;
     position: relative;
 }
+.navbar-toggler {
+    padding: 5px 10px;
+}
+.glass-container {
+    width: 48.2px;
+    height: 40px;
+    margin: auto 0;
+}
 .btn-inp {
     position: absolute;
     display: none;
@@ -327,10 +335,21 @@ footer {
         grid-template-rows: auto;
     }
 }
+@include media-breakpoint-up(lg) {
+    .hidden {
+        display: none;
+    }
+}
 @include media-breakpoint-down(lg) {
+    .navbar-brand {
+        margin: 0;
+    }
     .navbar-icon,
     .icons {
         display: none;
+    }
+    .hidden {
+        display: block;
     }
 
     .header {
@@ -421,7 +440,7 @@ footer {
     .text-container .btn {
         font-size: 1rem;
     }
-    .wedding-image{
+    .wedding-image {
         min-height: calc(100vh - 88px);
     }
     .slider {
