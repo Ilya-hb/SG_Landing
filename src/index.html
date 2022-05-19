@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SG Home Page</title>
-	<script src="/src/app.js"></script>
 </head>
 
 <body>
@@ -25,13 +24,13 @@
 							<a class="nav-link active hover" aria-current="page" href="#">Обо мне</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link hover" href="#">Портфолио</a>
+							<a class="nav-link hover" href="#portfolio">Портфолио</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link hover" href="#">Услуги</a>
+							<a class="nav-link hover" href="#services">Услуги</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link hover" href="#">Контакты</a>
+							<a class="nav-link hover" href="#contacts">Контакты</a>
 						</li>
 					</ul>
 					<div class="icons text-center">
@@ -40,7 +39,8 @@
 						<input type="search" id="btn-input" class="hidden btn-inp">
 						<a href="#"><i class="fa-brands fa-vk navbar-icon"></i></a>
 						<a href="#"><i class="fa-brands fa-facebook-square navbar-icon"></i></a>
-						<a href="#" class="insta"><svg width="0" height="0">
+						<a href="#" class="insta">
+							<svg width="0" height="0">
 								<radialGradient id="rg" r="150%" cx="30%" cy="107%">
 									<stop stop-color="#fdf497" offset="0" />
 									<stop stop-color="#fdf497" offset="0.05" />
@@ -48,7 +48,7 @@
 									<stop stop-color="#d6249f" offset="0.6" />
 									<stop stop-color="#285AEB" offset="0.9" />
 								</radialGradient>
-							</svg><i class="fa-brands fa-instagram navbar-icon" aria-hidden="true"></i></a>
+							</svg><i class="fa-brands fa-instagram navbar-icon"></i></a>
 					</div>
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 		</div>
 	</section>
 
-	<section class="portfolio mt-3">
+	<section class="portfolio mt-3" id="portfolio">
 		<div class="container-xxl text-center">
 			<div class="header-container mb-3">
 				<div class="lines-container">
@@ -267,9 +267,10 @@
 				</div>
 			</div>
 			<button class="btn btn-primary mt-5">Подробнее</button>
+		</div>
 	</section>
 
-	<section class="services mt-5">
+	<section class="services mt-5" id="services">
 		<div class="header-container mb-5">
 			<div class="lines-container">
 				<div class="red-line"></div>
@@ -335,6 +336,77 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="contacts" id="contacts">
+		<div class="container-xxl">
+			<div class="header-container m-3">
+				<div class="lines-container">
+					<div class="red-line"></div>
+					<div class="black-line"></div>
+				</div>
+				<span class="portfolio-header">Контакты</span>
+				<div class="lines-container-reverse">
+					<div class="black-line"></div>
+					<div class="red-line"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 col-md-3 icons-col">
+					<div class="contact-icon-container">
+						<i class="fa-brands fa-vk contact-icon"></i>
+					</div>
+					<div class="contact-icon-container">
+						<i class="fa-brands fa-facebook-square contact-icon"></i>
+					</div>
+					<div class="contact-icon-container">
+						<i class="fa-brands fa-instagram contact-icon"></i></a>
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-9 ">
+					<form action="#" class="form">
+						<div class="porftolio-header-container">
+							<span class="portfolio-header">обратная связь</span>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-md-5">
+								<div class="form-floating">
+									<input type="text" class="form-control form-inp" id="floatingText"
+										placeholder="Password">
+									<label for="floatingPassword">Имя</label>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-7">
+								<div class="form-floating">
+									<input type="email" class="form-control form-inp" id="floatingInput"
+										placeholder="name@example.com">
+									<label for="floatingInput">EMAIL/Телефон</label>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<div class="form-floating">
+									<input type="text" class="form-control form-inp" id="floatingInput"
+										placeholder="Сообщение">
+									<label for="floatingTextarea">Текст сообщения</label>
+								</div>
+							</div>
+
+						</div>
+						<div class="row"><button type="submit" class="btn btn-primary form-btn">отправить</button></div>
+					</form>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+	
+	<footer>
+
+	</footer>
 </body>
 
 </html>

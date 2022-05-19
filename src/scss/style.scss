@@ -23,6 +23,9 @@ $grid-breakpoints: (
     font-size: 30px;
     letter-spacing: 2px;
 }
+.btn {
+    box-shadow: none !important;
+}
 .nav-link {
     color: black !important;
     transition: 0.3s;
@@ -254,7 +257,47 @@ $grid-breakpoints: (
         }
     }
 }
+.contact-icon-container {
+    border: 2px solid $primary-color;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0;
+    transition: 0.2s;
+    cursor: pointer;
+    margin: 25px 10px;
+    max-width: 250px;
+    min-width: 140px;
+    &:hover {
+        background-color: $primary-color;
+        .contact-icon {
+            color: white;
+        }
+    }
+    .contact-icon {
+        @include icon(60px, $primary-color);
+    }
+}
 
+.form {
+    color: $primary-color;
+}
+.form-inp {
+    border: none;
+    border-bottom: 2px solid $primary-color;
+    border-radius: 0;
+    box-shadow: none !important;
+    padding-bottom: 5px !important;
+    height: calc(3rem + 2px) !important;
+}
+.form-floating label {
+    padding: 0.75rem 0.75rem 0;
+    top: 10px;
+    height: 70%;
+}
+.form-btn {
+    max-width: 200px;
+    margin: 40px auto;
+}
 @include media-breakpoint-up(xxxl) {
     .slider,
     .services {
@@ -269,9 +312,11 @@ $grid-breakpoints: (
     }
 }
 @include media-breakpoint-down(lg) {
-    .navbar-icon {
-        font-size: 40px;
+    .navbar-icon,
+    .icons {
+        display: none;
     }
+
     .header {
         position: fixed;
         width: 100%;
@@ -314,6 +359,32 @@ $grid-breakpoints: (
     .item p {
         font-size: 0.7rem;
     }
+
+    .porftolio-header-container {
+        text-align: center;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .form-inp,
+    .form-floating {
+        width: 100%;
+    }
+
+    .icons-col {
+        text-align: center;
+        padding: 0;
+        .contact-icon-container {
+            display: inline-block;
+            margin: 0 10px;
+            margin-bottom: 1rem;
+            min-width: 25%;
+            .contact-icon {
+                font-size: 40px;
+            }
+        }
+    }
+   
 }
 @include media-breakpoint-down(sm) {
     .navbar-brand {
@@ -322,7 +393,7 @@ $grid-breakpoints: (
     .slider-header {
         font-size: 0.7rem !important;
     }
-    .text-container .btn{
+    .text-container .btn {
         font-size: 0.7rem;
     }
     .slider {
@@ -334,14 +405,6 @@ $grid-breakpoints: (
         top: calc(50% - 25px);
         right: 0;
         justify-content: space-between;
-    }
-    .btn {
-        background-color: $primary-color !important;
-        color: white !important;
-        &:active {
-            background-color: white !important;
-            color: $primary-color !important;
-        }
     }
     .portfolio-header {
         font-size: 1.2rem;
