@@ -57,13 +57,13 @@ $grid-breakpoints: (
     color: black;
     position: relative;
 }
-.navbar-toggler {
-    padding: 5px 10px;
-}
 .glass-container {
-    width: 48.2px;
-    height: 40px;
+    width: fit-content;
     margin: auto 0;
+    border-radius: 50%;
+    background-color: $primary-color;
+    padding: 12px 12px;
+    text-align: center;
 }
 .btn-inp {
     position: absolute;
@@ -215,6 +215,16 @@ $grid-breakpoints: (
     transition: 0.5s ease;
     background-color: #0000006e;
 }
+.navbar-toggler {
+    border-radius: 50%;
+    background-color: $primary-color;
+    line-height: 24px;
+    font-size: 26px;
+    padding: 10px 13px;
+}
+.fa-bars {
+    color: white;
+}
 .container:hover .overlay {
     opacity: 1;
 }
@@ -346,13 +356,16 @@ footer {
     .navbar-brand {
         margin: 0;
     }
-
+    .fa-magnifying-glass {
+        margin: 0;
+    }
     .navbar-icon,
     .icons {
         display: none;
     }
     .hidden {
         display: block;
+        color: white;
     }
 
     .header {
